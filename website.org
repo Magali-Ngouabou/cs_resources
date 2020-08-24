@@ -209,6 +209,28 @@ li {
   text-decoration: none;
 } */
 
+.card1 {
+  text-align: center;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: 0.2s;
+  background-color: #B29DD9;
+}
 
+.card1:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.card2 {
+  text-align: center;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: 0.2s;
+  background-color: #FE6B64;
+}
+
+.card2:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
 #+end_src 
 
