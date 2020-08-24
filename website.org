@@ -270,5 +270,19 @@ li {
   #     j+=1
   #   i += 1
   #return result
+
+# get the sheet
+  result = {}
+  ss.refresh()
+  ws = ss[str(sheetName)]
+  #rows = ws.getRows()
+  # start from below the headings
+  j = 2
+  while ws.getRow(j)[0] != '' or ws.getRow(j)[1] != '':
+    #get the first and second values in each row
+    #first representing the org, second representing the link
+    result[ws.getRow(j)[0]] = ws.getRow(j)[1]
+
+    j += 1
 #+end_src 
 

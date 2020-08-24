@@ -1,8 +1,14 @@
 #cs resources
-from flask import Flask, render_template
+import os
+from flask import Flask, render_template, jsonify
 from flask_assets import Bundle, Environment
-import ezsheets
 from flask import request
+import json
+
+from googleapiclient.discovery import build
+from google.auth.transport.requests import Request
+from apiclient import discovery
+from google.oauth2 import service_account
 
 app = Flask(__name__)
 #method to communicate between javascript 
@@ -16,7 +22,7 @@ assets = Environment(app)
 
 assets.register('main_js', js)
 assets.register('mainStyle_css', css)
-ss = ezsheets.Spreadsheet('1ymSnsFKZGCtjU6idXxoVtWARedas7xIFcF_WcRyvkL0')
+
 @app.route('/')
 def index():
   return render_template('home.html')
@@ -65,21 +71,20 @@ def grads():
 @app.route('/app')
 def getData():
   sheetName = request.args.get('category')
-  # get the sheet
-  result = {}
-  ss.refresh()
-  ws = ss[str(sheetName)]
-  #rows = ws.getRows()
-  # start from below the headings
-  j = 2
-  while ws.getRow(j)[0] != '' or ws.getRow(j)[1] != '':
-    #get the first and second values in each row
-    #first representing the org, second representing the link
-    result[ws.getRow(j)[0]] = ws.getRow(j)[1]
+  SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+  creds_var = os.environ.get('CREDS', 'var not found')
+  creds_file = json.loads(creds_var)
+  SPREADSHEET_ID = '1ymSnsFKZGCtjU6idXxoVtWARedas7xIFcF_WcRyvkL0'
+  RANGE = sheetName+ '!A2:B150'
+  
+  credentials = service_account.Credentials.from_service_account_info(creds_file, scopes=SCOPES)
+  #builds service to access sheet
+  service = build('sheets', 'v4', credentials=credentials)
 
-    j += 1
+  sheet_values = service.spreadsheets().values.get(spreadsheetId=SPREADSHEET_ID, range=RANGE).execute()
+  links = sheet_values.get('values', [])
 
-  return result 
+  return jsonify(links)
 
 
 
