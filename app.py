@@ -67,7 +67,7 @@ def programs():
 def grads():
   return render_template('grad.html')
 
-#only gets data from a specific sheet
+#only  gets data from a specific sheet
 @app.route('/app')
 def getData():
   sheetName = request.args.get('category')
