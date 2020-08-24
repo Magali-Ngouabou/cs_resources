@@ -81,7 +81,7 @@ def getData():
   #builds service to access sheet
   service = build('sheets', 'v4', credentials=credentials)
 
-  sheet_values = service.spreadsheets().values.get(spreadsheetId=SPREADSHEET_ID, range=RANGE).execute()
+  sheet_values = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE).execute()
   links = sheet_values.get('values', [])
 
   return jsonify(links)
