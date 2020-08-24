@@ -232,5 +232,43 @@ li {
 .card2:hover {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
+
+# #@app.route('/app')
+# def getAllData():
+#   result = {}
+#   #instantiate a sheet
+  
+#   #when the info has been updated on the sheet, update on site
+#   ss.refresh()
+#   sheets = ss.sheetTitles
+#   #cols = ws.getColumns()
+#   #headings = rows[0]
+#   #i = 0
+
+#   for s in range(1, len(sheets)): 
+#     sheet = ss[s]
+#     result[sheets[s]] = []
+#     rows = sheet.getRows()
+#     j = 2
+#     while sheet.getRow(j)[0] != '' or sheet.getRow(j)[1] != '':
+#       #get the first and second values in each row
+#       #first representing the org, second representing the link
+#       result[sheets[s]].append((sheet.getRow(j)[0], sheet.getRow(j)[1]))
+
+#       j += 1
+
+
+  # while headings[i] != '':
+  #   #create a dictionary key for each header
+  #   header = headings[i]
+  #   result[header] = []
+
+  #   j = 1
+  #   col = ws.getColumn(i + 1)
+  #   while col[j] != '':
+  #     result[header].append(col[j])
+  #     j+=1
+  #   i += 1
+  #return result
 #+end_src 
 
