@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    {% assets "main_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <title>Learn New Skills Online</title>
+  </head>
+
+<body onload="fetchData('learn-online')">
+  <div id="data-learn-online">
+    <h>Learn New Skills Online</h>
+    <p>Some free or affordable resources to learn new tech skills online</p>
+  </div>
+
+</body>
+
+</html>

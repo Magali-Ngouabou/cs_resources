@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% assets "main_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <!-- {% assets "mainStyle_css" %}
+    <style type="text/css" src="{{ ASSET_URL }}"></style>
+    {% endassets %} -->
+    <title>CS Resources</title>
+  </head>
+
+  <body>
+    <div id="navigation" class="navbar">
+      <div id="drop" class="dropdown">
+        
+        <button class="dropbtn">Resources by Category <i class="fa fa-caret-down"></i></button>
+
+        <div class="dropdown-content">
+          <a href = "/paid-ops">Paid Opportunities</a>
+          <a href = "/fands">First and Second Year</a>
+          <a href = "/gov-jobs">Government Jobs</a>
+          <a href = "/prep">Interview Prep</a>
+          <a href = "/news">Tech News</a>
+          <a href = "/conferences">Tech Conferences</a>
+          <a href = "/hackathons">Hackathons</a>
+          <a href = "/grad">Grad School Resources</a>
+          <a href = "/programs">Tech Programs</a>
+          <a href = "/learn">Learn Online</a>
+        </div>
+      </div>
+      <a class="active" href ="#home">Home</a>
+    </div>
+    <!-- style="background-image: url('ombre_background.jpg');" -->
+    <!-- Welcome and intro -->
+    <div id="home" class="hero-image">
+      <div class="hero-text">
+        <h3 style="font-size:72px">
+          Computer Science Resources
+        </h3>
+      </div>
+    </div>
+
+    <p>Hello, this site is attempting to <br>
+      put most of the resources someone <br>
+      just starting out their CS or <br>
+      software engineering career would want <br>
+      to start looking into <br>
+
+    </p>
+
+    <div id="homebody" class="body">
+      <div class="row">
+        <div class="column">
+        <a href="paid-ops.html">
+        <div id="paid" class="card">
+            <h1>Paid opportunities</h1>
+        </div>
+        </div>
+        </a>
+      <div class="column">
+        <div class="card1">
+            <h1>Scholarships</h1>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card2">
+            <h1>Affordable/free online courses</h1>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card3">
+            <h1>Programs</h1>
+        </div>
+      </div> 
+    </div>
+  </div>
+  </body> 
+</html>
