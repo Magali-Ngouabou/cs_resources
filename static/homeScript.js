@@ -46,8 +46,8 @@ function fetchData(category) {
             
             paragraphElem = document.createElement('p');
             linkElement = document.createElement('a');
-            linkElement.innerText = x;
-            linkElement.href = response[x];
+            linkElement.innerText = response[x][0];
+            linkElement.href = response[x][1];
             linkElement.target = "_blank"
             paragraphElem.append(linkElement);
             dataDiv.appendChild(paragraphElem);
