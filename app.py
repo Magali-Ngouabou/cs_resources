@@ -11,7 +11,7 @@ from apiclient import discovery
 from google.oauth2 import service_account
 
 app = Flask(__name__)
-#method to communicate between javascript 
+#method  to communicate between javascript 
 #python and html
 js = Bundle('homeScript.js', output='gen/main.js')
 #also connects style sheet to python (hypothetically)
