@@ -23,6 +23,18 @@ assets = Environment(app)
 assets.register('main_js', js)
 assets.register('mainStyle_css', css)
 
+# create environment variable when not running on Heroku
+is_prod = os.environ.get('IS_HEROKU', None)
+
+if is_prod:
+  creds_var = os.environ.get('CREDS', 'var not found')
+
+else: 
+  f = open('creds.json',)
+  temp = json.load(f)
+  creds_var = json.dumps(temp)
+  f.close()
+
 @app.route('/')
 def index():
   return render_template('home.html')
@@ -72,7 +84,7 @@ def grads():
 def getData():
   sheetName = request.args.get('category')
   SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-  creds_var = os.environ.get('CREDS', 'var not found')
+ 
   creds_file = json.loads(creds_var)
   SPREADSHEET_ID = '1ymSnsFKZGCtjU6idXxoVtWARedas7xIFcF_WcRyvkL0'
   RANGE = sheetName+ '!A2:B150'

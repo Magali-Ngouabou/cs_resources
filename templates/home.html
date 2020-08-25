@@ -39,12 +39,12 @@
     <!-- Welcome and intro -->
     <div id="home" class="hero-image">
       <div class="hero-text">
-        <h3 style="font-size:72px">
+        <h3 style="font-size:10vh">
           Computer Science Resources
         </h3>
-        <h2 style="font-size:30px">A site attempting to gather <br>
+        <h2 style="font-size:4vh">Attempting to gather
           computer science resources in one place
-    
+          <br>
         </h2>
       </div>
     </div>
@@ -52,42 +52,70 @@
     
 
     <div id="homebody" class="body">
-      <div class="row">
-        <div class="column">
-        <a href="paid-ops.html">
-        <div id="paid" class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-            <h1>Paid opportunities</h1>
-          </div>
-            <div class="flip-card-back">
-              <h4>Paid opportunities</h4>
-              <p1>Some companies that offer paid internships
-                to students
-              </p1>
+      <div class="flip-cards">
+        <!-- Paid opportunities column-->
+    
+          <a href="/paid-ops">
+            <div class="flip-card" >
+              <div id="paid" class="flip-card-inner" >
+                <div class="flip-card-front">
+                <h1>Paid opportunities</h1>
+                </div>
+                <div class="flip-card-back">
+                  <p>Some companies that offer paid internships to students</p>
+                </div>
+                </div>
+              </div>
+          </a>
+      
+      <!-- Fellowships and Scholarships column-->
+          <a href="/grad">
+            <div  class="flip-card">
+              <div id="grads" class="flip-card-inner">
+                <div class="flip-card-front">
+                <h1>Fellowships and Scholarships</h1>
+                </div>
+                <div class="flip-card-back">
+                  <p>If you're considering grad school, here you'll find some related resources</p>
+                </div>
+                </div>
+              </div>
+          </a>
+
+      <!-- Online Courses-->
+        <a href="/learn">
+          <div class="flip-card">
+            <div id="learn" class="flip-card-inner">
+              <div class="flip-card-front">
+              <h1>Online Courses</h1>
+              </div>
+              <div class="flip-card-back">
+                <p>Gathered some sites that offer free and/or affordable courses online</p>
+              </div>
+              </div>
             </div>
-        </div>
-        </div>
-      </div>
         </a>
-      <div class="column">
-        <a href="grad.html">
-        <div id="scholar" class="flip-card">
-            <h1>Fellowships & Scholarships</h1>
-        </div>
-      </div>
+
+      <!-- Programs flip card -->
+      
+        <a href="/programs">
+          <div class="flip-card">
+            <div id="programs" class="flip-card-inner">
+              <div class="flip-card-front">
+              <h1>Tech Programs</h1>
+              </div>
+              <div class="flip-card-back">
+                <p>Some of the many places that offer guidance on starting your tech career</p> 
+
+              </div>
+              </div>
+            </div>
         </a>
-      <div class="column">
-        <div class="card2">
-            <h1>Affordable/free online courses</h1>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card3">
-            <h1>Programs</h1>
-        </div>
-      </div> 
+      
+     <!-- closing grid div--> 
     </div>
+
+  <!-- Closing homebody div-->
   </div>
   </body> 
 </html>

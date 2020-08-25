@@ -40,14 +40,14 @@ function fetchData(category) {
       })
       .then(function (response) {
           dataDiv = document.getElementById('data-'+category);
-          
+          console.log(response);
          
           for (x in response) {
             
             paragraphElem = document.createElement('p');
             linkElement = document.createElement('a');
-            linkElement.innerText = x;
-            linkElement.href = response[x];
+            linkElement.innerText = response[x][0];
+            linkElement.href = response[x][1];
             linkElement.target = "_blank"
             paragraphElem.append(linkElement);
             dataDiv.appendChild(paragraphElem);

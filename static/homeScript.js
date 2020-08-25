@@ -40,7 +40,7 @@ function fetchData(category) {
       })
       .then(function (response) {
           dataDiv = document.getElementById('data-'+category);
-          
+          console.log(response);
          
           for (x in response) {
             
