@@ -24,12 +24,14 @@ assets.register('main_js', js)
 assets.register('mainStyle_css', css)
 
 # create environment variable when not running on Heroku
+# if is_heroku not there, set var to None
 is_prod = os.environ.get('IS_HEROKU', None)
 
 if is_prod:
   creds_var = os.environ.get('CREDS', 'var not found')
 
 else: 
+  # update var
   f = open('creds.json',)
   temp = json.load(f)
   creds_var = json.dumps(temp)
