@@ -3,17 +3,59 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/resource_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% assets "main_js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
     <title>Conferences</title>
   </head>
 
+<!-- get all the links -->
 <body onload="fetchData('conferences')">
-  <div id="data-conferences">
-    <h>Conferences</h>
+
+  <!-- start navbar -->
+  <div id="navigation" class="navbar">
+    <a href = "/abt.html">About</a>
+    
+    <div id="drop" class="dropdown">
+      
+      <button class="dropbtn">Resources by Category  <i class="fa fa-caret-down"></i></button>
+
+      <div class="dropdown-content">
+        <a href = "/paid-ops">Paid Opportunities</a>
+        <a href = "/fands">First and Second Year</a>
+        <a href = "/gov-jobs">Government Jobs</a>
+        <a href = "/prep">Interview Prep</a>
+        <a href = "/news">Tech News</a>
+        <a href = "/conferences">Tech Conferences</a>
+        <a href = "/hackathons">Hackathons</a>
+        <a href = "/grad">Grad School Resources</a>
+        <a href = "/programs">Tech Programs</a>
+        <a href = "/learn">Learn Online</a>
+      </div>
+    </div>
+    <a href ="/">Home</a>
+    
+    <!--end of nav bar -->
   </div>
+
+
+
+  <h1>Conferences</h1>
+  
+
+  <!--page description-->
+  <div class="description-box">
+    <p>On this page you'll find different conferences. As with most things on this website, 
+      it's not a comprehensive list and we hope you use this among other resources.
+    </p>
+
+  </div>
+
+  <div id="data-conferences">
+    </div>
+
 
 </body>
 

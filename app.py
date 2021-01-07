@@ -10,6 +10,14 @@ from google.auth.transport.requests import Request
 from apiclient import discovery
 from google.oauth2 import service_account
 
+import asyncio
+from pyppeteer import launch
+
+
+
+
+
+loop = asyncio.get_event_loop()
 app = Flask(__name__)
 #method  to communicate between javascript 
 #python and html
@@ -36,6 +44,46 @@ else:
   temp = json.load(f)
   creds_var = json.dumps(temp)
   f.close()
+
+i = 0
+
+@app.route('/pageInfo')
+def pageInfo():
+  link = request.args.get('link')
+  linkSplit = link.split('.')
+  print(linkSplit)
+  name = linkSplit[1]
+  return loop.run_until_complete(pageInfoHelper(link, name))
+  
+
+async def pageInfoHelper(link, name):
+    
+    browser = await launch(
+    handleSIGINT=False,
+    handleSIGTERM=False,
+    handleSIGHUP=False
+)
+    page = await browser.newPage()
+    await page.goto(link)
+    await page.screenshot({'path': name + '.png'})
+    
+
+    image = {'img': name + '.png'}
+    # interact with the pafe
+    dimensions = await page.evaluate('''() => {
+        return {
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight,
+            deviceScaleFactor: window.devicePixelRatio,
+        }
+    }''')
+
+    #print(dimensions)
+    json = jsonify(image)
+    # >>> {'width': 800, 'height': 600, 'deviceScaleFactor': 1}
+    await browser.close()
+
+    return json
 
 @app.route('/')
 def index():
@@ -82,7 +130,7 @@ def grads():
   return render_template('grad.html')
 
 #only  gets data from a specific sheet
-@app.route('/app')
+@app.route('/app') #specifies endpoint
 def getData():
   sheetName = request.args.get('category')
   SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']

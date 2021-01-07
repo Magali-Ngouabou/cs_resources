@@ -107,17 +107,19 @@ a {
   column-gap: 3%;
   column-width: 30%;
 
-  -moz-column-count: 3;
+  -moz-column-count:3;
   -moz-column-gap: 3%;
   -moz-column-width: 30%;
   -webkit-column-count:3;
   -webkit-column-gap: 3%;
   -webkit-column-width: 30%;
+
 }
 
 .body {
   background-color: #210252;
   background-image: linear-gradient(130deg, #210252 0%, #66279c 50%,  white 190%);
+  /* background-image: linear-gradient(150deg, #13547a 0%, #80d0c7 100%); nice green */ 
   /* background-color: #667eea;
 background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%); */
   padding-bottom: 40px;
@@ -199,12 +201,13 @@ background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%); *
   transform: rotateX(180deg); 
 }
 
+
 /* Add classnames to these colors */
 #paid {
   background-color: #F88DAD;
 }
 #grads {
-  background-color:#e9a906;
+  background-color:#1D2F6F;
 }
 
 #learn {
@@ -224,7 +227,7 @@ background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%); *
 }
 
 #fands {
-  background-color:#e9a906;
+  background-color:#1D2F6F;
 }
 
 #gov {
@@ -232,7 +235,7 @@ background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%); *
 }
 
 #hack {
-  background-color:#e9a906;
+  background-color:#1D2F6F;
 }
 
 #news {
@@ -240,8 +243,8 @@ background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%); *
 }
 
 .footer {
-  background-color: #667eea;
-  background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%);
+  background-color: #210252;
+  background-image: linear-gradient(95deg, #210252 0%, #66279c 50%,  white 190%);
   padding: 10px;
   text-align: left;
   z-index: 1;
@@ -266,23 +269,22 @@ background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%); *
 
 .column p {
   color: white;
-  font-weight: 200;
+  font-weight: 400;
   width: 40%;
   padding-top: 1%;
 }
 
-.column p1 {
-  color: yellow;
-  padding-top: 1%;
+#wider-p {
+  width: 70%;
 }
 
 .col-head h2{
-  font-size: 1rem;
-  font-weight: 400;
-  color: orangered;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
   max-width: 40%;
-  border-bottom: 1px solid black;
-  padding-bottom: 5px;
+  border-bottom: 3px solid rgb(243, 169, 59);
+  padding-bottom: 1%;
 }
 
 .bg_image .above {
@@ -292,6 +294,7 @@ background-image: linear-gradient(25deg, #3ab5b0 0%, #3d99be 1%, #56317a 60%); *
   bottom: -20%;
   z-index: -1;
 }
+
 
 @media screen and (max-width: 768px) {
   body {
